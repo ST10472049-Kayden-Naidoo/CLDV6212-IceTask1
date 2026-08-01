@@ -61,8 +61,7 @@ namespace UniversityApp.Services
                 }
                 catch (Exception)
                 {
-                    // swallow so a single malformed message (or a student that
-                    // doesn't exist yet) doesn't take the whole worker down
+
                 }
 
                 await Task.Delay(5000, stoppingToken);
