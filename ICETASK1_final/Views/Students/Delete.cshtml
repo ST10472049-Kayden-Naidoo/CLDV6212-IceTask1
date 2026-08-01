@@ -1,0 +1,13 @@
+@using ICETASK1.Controllers
+@model StudentEntity
+@{
+    ViewData["Title"] = "Delete Student";
+}
+
+<h1>Delete Student</h1>
+<p>Are you sure you want to delete <strong>@Model.StudentName</strong>?</p>
+
+<form asp-action="Delete" asp-route-id="@Model.RowKey" method="post">
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

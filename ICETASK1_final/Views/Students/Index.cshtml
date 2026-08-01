@@ -1,0 +1,29 @@
+@using ICETASK1.Controllers
+@model List<StudentEntity>
+@{
+    ViewData["Title"] = "Students";
+}
+
+<h1>Registered Students</h1>
+<a asp-action="Create" class="btn btn-primary mb-3">Add a Student</a>
+
+<table class="table">
+    <thead>
+        <tr><th>Name</th><th>Email</th><th>Student ID (RowKey)</th><th>Enrolled Courses</th><th></th></tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentName</td>
+                <td>@student.Email</td>
+                <td><code>@student.RowKey</code></td>
+                <td>@student.EnrolledCourses</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@student.RowKey" class="btn btn-sm btn-primary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@student.RowKey" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

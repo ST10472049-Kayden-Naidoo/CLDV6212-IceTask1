@@ -1,0 +1,18 @@
+@using ICETASK1.Controllers
+@model StudentEntity
+@{
+    ViewData["Title"] = "Add a Student";
+}
+
+<h1>Add a New Student</h1>
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label>Full Name</label>
+        <input asp-for="StudentName" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label>Email</label>
+        <input asp-for="Email" type="email" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-success">Save Student</button>
+</form>
